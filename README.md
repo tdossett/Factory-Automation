@@ -1,14 +1,8 @@
-## angular2-seed
+## angular2-asp.netcore wep api-sq server
 
-A simple starter project demonstrating the basic concepts of Angular 2.
+A simple Angular 2 / ASP.Net Core Wep API / SQL Server
 
 
 ### Usage
-- Clone or fork this repository
-- Make sure you have [node.js](https://nodejs.org/) installed version 5+
-- Make sure you have NPM installed version 3+
-- `WINDOWS ONLY` run `npm install -g webpack webpack-dev-server typescript` to install global dependencies
-- run `npm install` to install dependencies
-- run `npm start` to fire up dev server
-- open browser to [`http://localhost:3000`](http://localhost:3000)
-- if you want to use other port, open `package.json` file, then change port in `--port 3000` script
+- This is a sample application that is written in Angular 2 and performs a simple Restful Service call that accesses factory information via ASP.NET Core version 1.0. The backend database consist of SQL Server 2016 and is accesed via ASP.NET Core Web API.
+- Select the "Factory Information" menu option an select a machine from the "machine" dropdown option, then click machine link to drill down to planned machine detailed data.
