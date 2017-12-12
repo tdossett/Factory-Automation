@@ -1,4 +1,4 @@
-## angular2-asp.netcore wep api-sq server
+## angular2-asp.net core wep api-sq server
 
 A simple Angular 2 / ASP.Net Core Wep API / SQL Server
 
