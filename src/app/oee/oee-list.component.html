@@ -1,0 +1,53 @@
+<div class="container-fluid" style="margin-top:70px">
+    <div class='panel panel-primary'>
+        <div class='panel-heading' style='font-size:medium'>
+            Factory Machines
+        </div>
+        <div class='panel-body'>
+            <label for="Machine">Machine:</label>
+        
+            <form [formGroup]="selectForm">
+                <select formControlName="selectOee" [ngModel]="selectedOee" (ngModelChange)="onChange($event)">
+                    <option *ngFor="let oee of oees" [ngValue]="oee.oeeid">
+                       {{ oee.oeename | uppercase }}
+                    </option>
+                </select>
+            </form>
+
+            <hr>
+
+        </div>
+    </div>
+
+    <div class='panel panel-primary'>
+        <div class='panel-heading' style='font-size:medium'>
+            Machine Details
+        </div>
+
+        <div class='panel-body'>
+            <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+            <div class='table-responsive'>
+                <table class='table table-striped table-bordered table-condensed' *ngIf='selectedOee'>
+                    <thead>
+                        <tr class="success">
+                            <th>Machine Id</th>
+                            <th>Machine Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let oee of oees | oeeFilter:selectedOee'>
+                            <td>{{ oee.oeeid }}</td>
+                            <td> <a [routerLink]="['/planned', oee.oeeid, oee.oeename]">
+                                {{ oee.oeename | uppercase }}
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+
+</div>
+

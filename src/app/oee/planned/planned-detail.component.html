@@ -1,0 +1,89 @@
+<div class='panel panel-primary' *ngIf='planned' style="margin-top:70px">   
+    <div class='panel-heading' style='font-size:medium'>
+        Planned Detail: {{pageTitle | uppercase}}
+    </div>
+
+    <div class='panel-body'>
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+        <div class='panel-body'>
+            <div class="table-responsive">
+                <th><h4>Planned Maintenance</h4></th>          
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr class="success">
+                        <th>Planned Maintenance</th>
+                        <th>TPM</th>
+                        <th>Calibration</th>
+                        <th>Testing</th>
+                        <th>Other</th>
+                        <th>PM Planned Maintenance Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{planned.plannedMaintenace}}</td>
+                        <td>{{planned.tpm}}</td>
+                        <td>{{planned.calibration}}</td>
+                        <td>{{planned.testing}}</td>
+                        <td>{{planned.other}}</td>
+                        <td>{{planned.pmplannedMaintenanceDate | date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive">
+                <th><h4>Personal Planned</h4></th>          
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr class="success">
+                        <th>Break</th>
+                        <th>Meeting Planned</th>
+                        <th>Shift Changed</th>
+                        <th>Training</th>
+                        <th>Planned Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{planned.break}}</td>
+                        <td>{{planned.meetingPlanned}}</td>
+                        <td>{{planned.shiftChanged}}</td>
+                        <td>{{planned.training}}</td>
+                        <td>{{planned.plannedDate | date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive">  
+                <th><h4>Planned Downtime</h4></th>        
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr class="success">
+                        <th>No Work Scheduled</th>
+                        <th>Planned Down Time Date </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{planned.noWorkScheduled}}</td>
+                        <td>{{planned.plannedDownTimeDate | date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+       
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-primary' (click)='onBack(planned.oeeid, pageTitle)' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
